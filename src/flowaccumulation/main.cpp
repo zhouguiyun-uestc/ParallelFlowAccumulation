@@ -40,7 +40,7 @@ bool processTileGrid( GridInfo& gridDEMInfo, std::vector< TileInfo >& tileDEMInf
         TileInfo& tileDEMInfo                     = tileDEMInfos[ i ];
         std::shared_ptr< IProducer2Consumer > p2c = pIProducer->toConsumer( gridIConsumer2Producer.at( tileDirInfo.gridRow, tileDirInfo.gridCol ).get() );
         std::shared_ptr< IConsumer > pIConsumer   = pIObjFactory->createConsumer();
-        pIConsumer->processRound2( gridDEMInfo, gridDirInfo, tileDEMInfo, tileDirInfo, filename, p2c.get() );  //三种方法
+        pIConsumer->processRound2( gridDEMInfo, gridDirInfo, tileDEMInfo, tileDirInfo, filename, p2c.get() );  //脠媒脰脰路陆路篓
     }
 
     std::string txtPath = gridDirInfo.outputFolder + "\\" + "gridInfo.txt";
@@ -106,16 +106,14 @@ int main( int argc, char** argv ) {
     MPI_Comm_rank( MPI_COMM_WORLD, &rank );
     MPI_Comm_size( MPI_COMM_WORLD, &size );
     if ( rank == 0 ) {
-        std::string retention = argv[ 1 ];
-        std::string pathDEM   = argv[ 2 ];
-        std::string pathDir   = argv[ 3 ];
-        std::string filename  = argv[ 4 ];
-        std::string savePath  = argv[ 5 ];
+        std::string pathDEM   = argv[ 1 ];
+        std::string pathDir   = argv[ 2 ];
+        std::string filename  = argv[ 3 ];
+        std::string savePath  = argv[ 4 ];
         std::cerr << "c Processes = " << size << std::endl;
         std::cerr << "c Input DEM file = " << pathDEM << std::endl;
         std::cerr << "c Input Dir file = " << pathDir << std::endl;
         std::cerr << "c Input file name = " << filename << std::endl;
-        std::cerr << "c Retention strategy = " << retention << std::endl;
         std::cerr << "c Save path = " << savePath << std::endl;
 
         Timer timer_master;
