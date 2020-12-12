@@ -25,7 +25,7 @@ The result is a program called `ParallelFlowAccum`.
 The program can be run with four modes: `parallel`, `recursive`, `wang`, and `proposed_sequntial`. In `parallel` mode, the program derives flow accumulation in parallel. In `recursive` mode, the program derives flow accumulation using recursive algorithm. In `wang` mode, the program derives flow accumulation using wang's algorithm. In `proposed_sequential` mode, the program derives flow accumulation using our proposed sequential algorithm.  
 In `parallel` mode, the program has the following arguments:
 ```
-mpirun -np <PROCESSES_NUMBER>  ParaFlowAccum parallel <INPUT_DEM> <INPUT_DIR> <NAME> <OUTPUT_ACCUM>
+mpirun -np <PROCESSES_NUMBER>  ParallelFlowAccum parallel <INPUT_DEM> <INPUT_DIR> <NAME> <OUTPUT_ACCUM>
 ```
 The `<INPUT_DEM>` argument is a folder path which contains the DEM files.  
 The `<INPUT_DIR>` argument is a folder path which contains the flow directions files.  
@@ -34,20 +34,20 @@ The `<OUTPUT_ACCUM>` argument specifes the output folder.
 
 An example command is:  
 ```
-mpirun -np 3 ParaFlowAccum ./test_data/freeborn/dem ./test_data/freeborn/dir "freeborn9" ./test_data/freeborn/accum  
+mpirun -np 3 ParallelFlowAccum parallel ./test_data/freeborn/dem ./test_data/freeborn/dir "freeborn9" ./test_data/freeborn/accum  
 ```
 `-np 3` indicates that the program is run in parallel over 3 processes, which includes 1 producer process and 2 consumer processes.     
 In `recursive` mode, the program has the following arguments: 
 ```
-ParaFlowAccum recursive <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
+ParallelFlowAccum recursive <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
 ```
 In `wang` mode, the program has the following arguments: 
 ```
-ParaFlowAccum wang <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
+ParallelFlowAccum wang <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
 ```
 In `proposed_sequential` mode, the program has the following arguments: 
 ```
-ParaFlowAccum proposed_sequential <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
+ParallelFlowAccum proposed_sequential <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
 ```
 The `<INPUT_DEM_FILE>` argument specifes the input DEM.  
 The `<INPUT_DIR_FILE>` argument specifes the input flow_directions.  
