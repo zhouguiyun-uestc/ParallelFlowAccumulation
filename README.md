@@ -64,6 +64,7 @@ The fifth line specifies the total height of the whole DEM.
 The sixth line specifies the total width of the whole DEM.   
 The seventh line specifies the cell size.  
 similarity, there is a gridInfo.txt which contains the information of tiles of the flow directions in flow directions folder.  
+# 
 
 # Test data
 The test_data folder contains one test datasets that can be used with the program.  
