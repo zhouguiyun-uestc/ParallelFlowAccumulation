@@ -39,15 +39,15 @@ mpirun -np 3 ParallelFlowAccum parallel ./test_data/freeborn/dem ./test_data/fre
 `-np 3` indicates that the program is run in parallel over 3 processes, which includes 1 producer process and 2 consumer processes.     
 In `recursive` mode, the program has the following arguments: 
 ```
-ParallelFlowAccum recursive <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
+./ParallelFlowAccum recursive <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
 ```
 In `wang` mode, the program has the following arguments: 
 ```
-ParallelFlowAccum wang <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
+./ParallelFlowAccum wang <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
 ```
 In `proposed_sequential` mode, the program has the following arguments: 
 ```
-ParallelFlowAccum proposed_sequential <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
+./ParallelFlowAccum proposed_sequential <INPUT_DEM_FILE> <INPUT_DIR_FILE> <OUTPUT_ACCUM_FILE>
 ```
 The `<INPUT_DEM_FILE>` argument specifes the input DEM.  
 The `<INPUT_DIR_FILE>` argument specifes the input flow_directions.  
