@@ -5,27 +5,26 @@
 
 #include <memory>
 
-template <class T>
-class Raster:public Grid<T>
-{
+template <class T> class Raster : public Grid<T> {
 public:
-	T NoDataValue;
-	std::shared_ptr<std::vector<double>> geoTransforms;
+    T NoDataValue;
+    std::shared_ptr<std::vector<double>> geoTransforms;
+
 private:
-	const int  dRow[8] = { 0, 1, 1, 1, 0,-1,-1,-1 };
-	const int  dCol[8] = { 1, 1, 0,-1,-1,-1, 0, 1 };
+    const int dRow[8] = { 0, 1, 1, 1, 0, -1, -1, -1 };
+    const int dCol[8] = { 1, 1, 0, -1, -1, -1, 0, 1 };
+
 public:
-	double* getGeoTransformsPtr ();
-	Raster();
-	~Raster();
-	bool isNoData(int row, int col);
-	bool isInGrid(int row, int col);
-	int getRow(int dir, int row);
-	int getCol(int dir, int col);
-	std::vector<T> getRowData(int row);
-	std::vector<T> getColData(int col);
-	T getNoDataValue();
+    double* getGeoTransformsPtr();
+    Raster();
+    ~Raster();
+    bool isNoData(int row, int col);
+    bool isInGrid(int row, int col);
+    int getRow(int dir, int row);
+    int getCol(int dir, int col);
+    std::vector<T> getRowData(int row);
+    std::vector<T> getColData(int col);
+    T getNoDataValue();
 };
 
 #endif
-

@@ -3,11 +3,9 @@
 
 #include <paradem/i_object.h>
 
-class ObjectDeleter
-{
+class ObjectDeleter {
 public:
-	void operator() (IObject * x);
+    void operator()(IObject* x);
 };
 
 #endif
-

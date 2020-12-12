@@ -3,8 +3,7 @@
 
 #include <paradem/i_object.h>
 
-class IConsumer2Producer :public IObject
-{
+class IConsumer2Producer : public IObject {
 public:
 };
 #endif

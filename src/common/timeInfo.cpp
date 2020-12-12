@@ -5,4 +5,4 @@ TimeInfo::TimeInfo() {
     vmpeak = vmhwm = 0;
 }
 
-TimeInfo::TimeInfo( double calc, double overall, double io, long vmpeak, long vmhwml ) : calc( calc ), overall( overall ), io( io ), vmpeak( vmpeak ), vmhwm( vmhwm ) {}
+TimeInfo::TimeInfo(double calc, double overall, double io, long vmpeak, long vmhwml) : calc(calc), overall(overall), io(io), vmpeak(vmpeak), vmhwm(vmhwml) {}

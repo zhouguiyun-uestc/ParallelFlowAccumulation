@@ -10,38 +10,38 @@ public:
     double elevation;
 
     Node() {
-        row       = 0;
-        col       = 0;
+        row = 0;
+        col = 0;
         elevation = -9999.0;
     }
-    Node( int row, int col, float elevation ) {
-        this->row       = row;
-        this->col       = col;
+    Node(int row, int col, float elevation) {
+        this->row = row;
+        this->col = col;
         this->elevation = elevation;
     }
 
-    struct Greater : public std::binary_function< Node, Node, bool > {
-        bool operator()( const Node n1, const Node n2 ) const {
+    struct Greater : public std::binary_function<Node, Node, bool> {
+        bool operator()(const Node n1, const Node n2) const {
             return n1.elevation > n2.elevation;
         }
     };
 
-    bool operator==( const Node& a ) {
-        return ( this->col == a.col ) && ( this->row == a.row );
+    bool operator==(const Node& a) {
+        return (this->col == a.col) && (this->row == a.row);
     }
-    bool operator!=( const Node& a ) {
-        return ( this->col != a.col ) || ( this->row != a.row );
+    bool operator!=(const Node& a) {
+        return (this->col != a.col) || (this->row != a.row);
     }
-    bool operator<( const Node& a ) {
+    bool operator<(const Node& a) {
         return this->elevation < a.elevation;
     }
-    bool operator>( const Node& a ) {
+    bool operator>(const Node& a) {
         return this->elevation > a.elevation;
     }
-    bool operator>=( const Node& a ) {
+    bool operator>=(const Node& a) {
         return this->elevation >= a.elevation;
     }
-    bool operator<=( const Node& a ) {
+    bool operator<=(const Node& a) {
         return this->elevation <= a.elevation;
     }
 };

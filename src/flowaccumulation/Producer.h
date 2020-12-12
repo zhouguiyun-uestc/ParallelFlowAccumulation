@@ -17,13 +17,14 @@ public:
     Timer timer_io, timer_calc;
 
 public:
-    virtual void process( const GridInfo& gridInfo, const std::vector< TileInfo >& tileInfos, Grid< std::shared_ptr< IConsumer2Producer > >& gridIConsumer2Producer );
-    virtual std::shared_ptr< IProducer2Consumer > toConsumer( const IConsumer2Producer* ic2p );
+    virtual void process(const GridInfo& gridInfo, const std::vector<TileInfo>& tileInfos, Grid<std::shared_ptr<IConsumer2Producer>>& gridIConsumer2Producer);
+    virtual std::shared_ptr<IProducer2Consumer> toConsumer(const IConsumer2Producer* ic2p);
     virtual void free();
+    virtual ~Producer() = default;
 
 public:
-    void globalAccumOffset_tradition( const GridInfo& gridInfo, const std::vector< TileInfo >& tileInfos, Grid< std::shared_ptr< IConsumer2Producer > >& gridIConsumer2Producer );
-    void globalAccumOffset_improve( const GridInfo& gridInfo, const std::vector< TileInfo >& tileInfos, Grid< std::shared_ptr< IConsumer2Producer > >& gridIConsumer2Producer );
+    void globalAccumOffset_tradition(const GridInfo& gridInfo, const std::vector<TileInfo>& tileInfos, Grid<std::shared_ptr<IConsumer2Producer>>& gridIConsumer2Producer);
+    void globalAccumOffset_improve(const GridInfo& gridInfo, const std::vector<TileInfo>& tileInfos, Grid<std::shared_ptr<IConsumer2Producer>>& gridIConsumer2Producer);
 };
 
 #endif

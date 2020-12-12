@@ -22,16 +22,17 @@ public:
     Timer timer_calc;
 
 public:
-    virtual bool processRound1( const GridInfo& gridDEMInfo, const GridInfo& gridDirInfo, const TileInfo& tileDEMInfo, const TileInfo& tileDirInfo, const std::string& filename,
-                                IConsumer2Producer* pIC2P );
-    virtual bool processRound2( const GridInfo& gridDEMInfo, const GridInfo& gridDirInfo, const TileInfo& tileDEMInfo, const TileInfo& tileDirInfo, const std::string& filename,
-                                IProducer2Consumer* pIP2C );
+    virtual bool processRound1(const GridInfo& gridDEMInfo, const GridInfo& gridDirInfo, const TileInfo& tileDEMInfo, const TileInfo& tileDirInfo, const std::string& filename,
+                               IConsumer2Producer* pIC2P);
+    virtual bool processRound2(const GridInfo& gridDEMInfo, const GridInfo& gridDirInfo, const TileInfo& tileDEMInfo, const TileInfo& tileDirInfo, const std::string& filename,
+                               IProducer2Consumer* pIP2C);
+    virtual ~Consumer() = default;
 
 public:
-    void getEdgeLink( const int tileHeight, const int tileWidth, Raster< uint8_t >& flowdirs, Raster< float >& dem, const int cellSize, Consumer2Producer* pC2P );
-    bool isInnerEdge( int row, int col, int height, int width );
-    void calculateStatistics( Raster< double >& accum, double* min, double* max, double* mean, double* stdDev );
     virtual void free();
+    void getEdgeLink(const int tileHeight, const int tileWidth, Raster<uint8_t>& flowdirs, Raster<float>& dem, const int cellSize, Consumer2Producer* pC2P);
+    bool isInnerEdge(int row, int col, int height, int width);
+    void calculateStatistics(Raster<double>& accum, double* min, double* max, double* mean, double* stdDev);
 };
 
 #endif
