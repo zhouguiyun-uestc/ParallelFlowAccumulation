@@ -101,9 +101,6 @@ bool check(const std::string inputDEMFile, const std::string inputDirFile) {
 }
 
 int main(int argc, char** argv) {
-    if (argc != 6) {
-        std::cout << "Parameter error! There are five arguments (method,the folder path of DEMs, the folder path of flow direction file, fileName, outputPath.)" << std::endl;
-    }
     char* method = argv[1];
     if (strcmp(method, "parallel") == 0) {
         int rank, size;
