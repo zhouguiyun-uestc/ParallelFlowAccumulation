@@ -22,7 +22,7 @@ make
 ```  
 The result is a program called `ParallelFlowAccum`.  
 # Program arguments  
-The program can be run with four modes: `parallel`, `recursive`, `wang`, and `proposed_sequntial`. In `parallel` mode, the program derives flow accumulation in parallel. In 'recursive' mode, the program derives flow accumulation using recursive algorithm. In 'wang' mode, the program derives flow accumulation using wang's algorithm. In 'proposed_sequential' mode, the program derives flow accumulation using our proposed sequential algorithm.  
+The program can be run with four modes: `parallel`, `recursive`, `wang`, and `proposed_sequntial`. In `parallel` mode, the program derives flow accumulation in parallel. In `recursive` mode, the program derives flow accumulation using recursive algorithm. In `wang` mode, the program derives flow accumulation using wang's algorithm. In `proposed_sequential` mode, the program derives flow accumulation using our proposed sequential algorithm.  
 In `parallel` mode, the program has the following arguments:
 ```
 mpirun -np <PROCESSES_NUMBER>  ParaFlowAccum parallel <INPUT_DEM> <INPUT_DIR> <NAME> <OUTPUT_ACCUM>
